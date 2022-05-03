@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "fireservice-webapp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,7 @@
+{
+  "name": "fireservice-webapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
