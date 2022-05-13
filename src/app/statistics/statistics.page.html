@@ -1,0 +1,140 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Statistiken
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="actual" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="actual">
+        <ion-icon name="time-outline"></ion-icon>
+        <ion-label>Aktuell</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="12h">
+        <ion-icon name="time-outline"></ion-icon>
+        <ion-label>12h</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="24h">
+        <ion-icon name="time-outline"></ion-icon>
+        <ion-label>24h</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid *ngIf="selectedTab === 'actual'">
+    <ion-row>
+     <ion-grid>
+        <ion-row style="flex-wrap: nowrap;">
+          <ion-col class="centered-icon">
+            <ion-icon src="../../assets/icon/emergency.svg" style="font-size: 45pt"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-grid>
+              <ion-row>
+                <span style="font-size: 5em">{{ sumCurrent$ | async }}</span>
+              </ion-row>
+              <ion-row>
+                <span class="big-subtitle">
+                  <span>Einsätze</span>
+                </span>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+    <ion-row style="display: flex; align-items: center; justify-content: center;">
+        <ngx-charts-pie-chart *ngIf="currentStatisticValue$ | async as stats"
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="stats"
+          [gradient]="gradient"
+          [legend]="showLegend"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          [maxLabelLength]="maxLabelLength"
+          style="fill: var(--ion-color-light)"
+          >
+        </ngx-charts-pie-chart>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="selectedTab === '12h'">
+    <ion-row>
+     <ion-grid>
+        <ion-row style="flex-wrap: nowrap;">
+          <ion-col class="centered-icon">
+            <ion-icon src="../../assets/icon/emergency.svg" style="font-size: 45pt"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-grid>
+              <ion-row>
+                <span style="font-size: 5em">{{ sum12h$ | async }}</span>
+              </ion-row>
+              <ion-row>
+                <span class="big-subtitle">
+                  <span>Einsätze</span>
+                </span>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+    <ion-row style="display: flex; align-items: center; justify-content: center;">
+        <ngx-charts-pie-chart *ngIf="statisticValue12h$ | async as stats"
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="stats"
+          [gradient]="gradient"
+          [legend]="showLegend"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          [maxLabelLength]="maxLabelLength"
+          style="fill: var(--ion-color-light)"
+          >
+        </ngx-charts-pie-chart>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="selectedTab === '24h'">
+    <ion-row>
+     <ion-grid>
+        <ion-row style="flex-wrap: nowrap;">
+          <ion-col class="centered-icon">
+            <ion-icon src="../../assets/icon/emergency.svg" style="font-size: 45pt"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-grid>
+              <ion-row>
+                <span style="font-size: 5em">{{ sum24h$ | async }}</span>
+              </ion-row>
+              <ion-row>
+                <span class="big-subtitle">
+                  <span>Einsätze</span>
+                </span>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+    <ion-row style="display: flex; align-items: center; justify-content: center;">
+        <ngx-charts-pie-chart *ngIf="statisticValue24h$ | async as stats"
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="stats"
+          [gradient]="gradient"
+          [legend]="showLegend"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          [maxLabelLength]="maxLabelLength"
+          style="fill: var(--ion-color-light)"
+          >
+        </ngx-charts-pie-chart>
+    </ion-row>
+  </ion-grid>
+</ion-content>

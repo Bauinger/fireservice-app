@@ -1,34 +1,47 @@
+import { DistrictsListPage } from './../districts-list/districts-list.page';
+import { OverviewPage } from './../overview/overview.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { StatisticsPage } from '../statistics/statistics.page';
+import { DistrictDetailPage } from '../district-detail/district-detail.page';
+import { IncidentDetailPage } from '../incident-detail/incident-detail.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'fire',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'overview',
+        component: OverviewPage
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'districts',
+        component: DistrictsListPage
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'statistics',
+        component: StatisticsPage
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/fire/overview',
         pathMatch: 'full'
+      },
+      {
+        path: 'district/:id',
+        component: DistrictDetailPage
+      },
+      {
+        path: 'incidents/:id',
+        component: IncidentDetailPage
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/fire/overview',
     pathMatch: 'full'
   }
 ];

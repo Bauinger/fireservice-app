@@ -1,0 +1,19 @@
+.warn-none {
+  background: var(--ion-color-medium);
+  color: var(--ion-color-medium-contrast);
+}
+
+.warn-low {
+  background: var(--ion-color-warning);
+  color: var(--ion-color-warning-contrast);
+}
+
+.warn-medium {
+  background: var(--ion-color-medium-danger);
+  color: var(--ion-color-medium-danger-contrast);
+}
+
+.warn-high {
+  background: var(--ion-color-danger);
+  color: var(--ion-color-danger-contrast);
+}

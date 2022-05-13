@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ nameOfDistrict$ | async }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="(incidentCountOfDistrict$ | async) === 0">
+    <ion-item>
+      <ion-icon *ngIf="(bazOnlineOfDistrict$ | async) === false" name="power-outline" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        <h2 *ngIf="(bazOnlineOfDistrict$ | async) === false">Alarmzentrale offline!</h2>
+        <p>Zurzeit sind keine Einsätze vorhanden.</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-list *ngIf="(incidentCountOfDistrict$ | async) > 0">
+    <ion-item *ngFor="let incident of incidentsOfDistricts$ | async" (click)="navigateTo(incident.i)">
+      <ion-note slot="start" [color]="getAlertLevelColor(incident.a)"><h4>{{ incident.a }}</h4></ion-note>
+      <ion-label>
+        <h2>
+         <span *ngIf="incident.m !== ''">{{ incident.m }}</span>
+         <span *ngIf="incident.m === ''">Kein Meldebild</span>
+        </h2>
+        <p>{{ incident.o }}<span *ngIf="incident.o2">, </span>{{incident.o2}} | {{incident.d}} | {{incident.t}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

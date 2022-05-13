@@ -1,0 +1,36 @@
+.lower-austria-map{
+  fill: var(--ion-color-medium);
+  stroke: var(--ion-color-light);
+  stroke-width: 1.0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+  fill-opacity: 1;
+}
+
+.big-subtitle {
+  font-size: 1.5em;
+  color: var(--ion-color-medium);
+}
+
+.subtitle{
+  font-size: 1em;
+  color: var(--ion-color-medium);
+}
+
+.centered-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.others {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.map-card {
+  justify-content: center;
+}
