@@ -9,7 +9,6 @@ import { NgxsModule } from '@ngxs/store';
 import { FireState } from './fire-state';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PollingService } from './services/polling.service';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
