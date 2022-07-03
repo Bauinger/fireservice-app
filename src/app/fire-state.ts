@@ -5,10 +5,9 @@ import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 // eslint-disable-next-line max-len
 import { LoadBazInfo, LoadMainData, LoadDistrictDetail, LoadIncidentDetail } from './fire-actions';
-import { delay, mergeMap, repeat, switchMap, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import * as converter from 'xml-js';
 import { BaseIncident } from './model/active-incidents-district';
-import { of, timer } from 'rxjs';
 
 const REFRESH_INTERVAL = 30000;
 

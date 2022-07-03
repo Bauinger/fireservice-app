@@ -18,7 +18,7 @@ import { PollingService } from './services/polling.service';
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    NgxsModule.forRoot([FireState], {developmentMode: true}),
+    NgxsModule.forRoot([FireState], { developmentMode: true }),
     BrowserAnimationsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PollingService],

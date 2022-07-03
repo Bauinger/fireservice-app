@@ -4,7 +4,7 @@ import { ActiveIncidentsPerDistrict } from './../model/active-incidents-district
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap, timeout } from 'rxjs/operators';
+import { catchError, timeout } from 'rxjs/operators';
 import { MainData } from '../model/main-data';
 
 @Injectable({

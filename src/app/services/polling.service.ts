@@ -2,7 +2,7 @@ import { LoadBazInfo, LoadDistrictDetail, LoadIncidentDetail } from './../fire-a
 import { Injectable, OnDestroy } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { timer, Subject } from 'rxjs';
-import { switchMap, tap, share, retry, takeUntil } from 'rxjs/operators';
+import { switchMap, retry, takeUntil } from 'rxjs/operators';
 import { LoadMainData } from '../fire-actions';
 
 const POLLING_INTERVAL = 30000;
