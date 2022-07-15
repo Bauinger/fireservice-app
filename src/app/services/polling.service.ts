@@ -7,7 +7,6 @@ import { LoadMainData } from '../fire-actions';
 
 const POLLING_INTERVAL = 30000;
 
-
 @Injectable({
   providedIn: 'root'
 })
