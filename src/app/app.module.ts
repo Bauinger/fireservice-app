@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -17,7 +18,7 @@ import { PollingService } from './services/polling.service';
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    NgxsModule.forRoot([FireState], { developmentMode: true }),
+    NgxsModule.forRoot([FireState], { developmentMode: !environment.production }),
     BrowserAnimationsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PollingService],

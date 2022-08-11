@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Select } from '@ngxs/store';
+import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 import { Observable } from 'rxjs';
 import { FireState } from '../fire-state';
-import { IncidentParticipant } from '../model/detailed-incident';
 
 @Component({
   templateUrl: './statistics.page.html',
@@ -18,15 +18,18 @@ export class StatisticsPage {
   @Select(FireState.statisticValue24h) statisticValue24h$: Observable<any>;
   selectedTab = 'actual';
   single: any[];
-  view: any[] = [400, 400];
+  view: [number, number] = [400, 400];
   gradient = false;
   showLegend = true;
   showLabels = false;
   isDoughnut = false;
-  legendPosition = 'top';
+  legendPosition: LegendPosition = LegendPosition.Below;
   maxLabelLength = 20;
 
-  colorScheme = {
+  colorScheme: Color = {
+    name: 'myScheme',
+    selectable: true,
+    group: ScaleType.Ordinal,
     domain: ['#3880ff', '#eb445a', '#2dd36f', '#92949c']
   };
 
