@@ -1,5 +1,7 @@
 # Feuerwehreinsätze NÖ - FireService
 
+The running web app can be found [here.](https://fireservice-app.herokuapp.com)
+
 Web- &amp; mobile app for displaying information about ongoing firefighter operations and statistics of operations in lower austria. The [Grisu NÖ - Mobile App](https://github.com/Grisu-NOE/mobile-app) was used as model.
 
 ## Description
