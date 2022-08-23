@@ -30,4 +30,8 @@ export class OverviewPage {
     );
   }
 
+  navigateToImprint() {
+    this.router.navigate(['fire/imprint']);
+  }
+
 }

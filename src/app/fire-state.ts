@@ -9,8 +9,6 @@ import { tap } from 'rxjs/operators';
 import * as converter from 'xml-js';
 import { BaseIncident } from './model/active-incidents-district';
 
-const REFRESH_INTERVAL = 30000;
-
 export interface FireStateModel {
   districts: District[];
   sumCurrent: number;

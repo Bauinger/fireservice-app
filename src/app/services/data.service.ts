@@ -13,8 +13,8 @@ import { MainData } from '../model/main-data';
 export class DataService {
 
   config = {
-    wastlMobileBaseUrl: 'https://einsatz-data-proxy.herokuapp.com/https://infoscreen.florian10.info/OWS/wastlMobile/',
-    bazInfoUrl: 'https://einsatz-data-proxy.herokuapp.com/http://atlas.feuerwehr-krems.at/CodePages/Wastl/GetDaten/GetWastlMainS3.asp?Time',
+    wastlMobileBaseUrl: 'https://infoscreen.florian10.info/OWS/wastlMobile/',
+    bazInfoUrl: 'http://atlas.feuerwehr-krems.at/CodePages/Wastl/GetDaten/GetWastlMainS3.asp?Time',
     httpTimeout: 60000 // 60 seconds maximum request time
   };
 

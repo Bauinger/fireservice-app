@@ -1,3 +1,4 @@
+import { ImprintPage } from './../imprint/imprint.page';
 import { IncidentDetailPage } from './../incident-detail/incident-detail.page';
 import { StatisticsPage } from './../statistics/statistics.page';
 import { DistrictsListPage } from './../districts-list/districts-list.page';
@@ -27,7 +28,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     OverviewPage,
     DistrictsListPage,
     StatisticsPage,
-    IncidentDetailPage
+    IncidentDetailPage,
+    ImprintPage
   ]
 })
 export class TabsPageModule {}

@@ -30,6 +30,7 @@ export class DistrictDetailPage implements OnInit {
 
   ngOnInit() {
     this.selectedDistrictId = this.route.snapshot.paramMap.get('id');
+    this.store.dispatch(new LoadDistrictDetail(this.selectedDistrictId));
     this.pollingService.pollDistrict(this.selectedDistrictId);
   }
 

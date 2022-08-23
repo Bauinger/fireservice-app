@@ -26,11 +26,13 @@ export class IncidentDetailPage implements OnInit {
 
   constructor(
     private pollingService: PollingService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private store: Store
   ) {}
 
   ngOnInit(): void {
     this.selectedIncidentId = this.route.snapshot.paramMap.get('id');
+    this.store.dispatch(new LoadIncidentDetail(this.selectedIncidentId));
     this.pollingService.pollIncident(this.selectedIncidentId);
   }
 

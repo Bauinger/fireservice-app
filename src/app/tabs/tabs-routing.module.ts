@@ -6,6 +6,7 @@ import { TabsPage } from './tabs.page';
 import { StatisticsPage } from '../statistics/statistics.page';
 import { DistrictDetailPage } from '../district-detail/district-detail.page';
 import { IncidentDetailPage } from '../incident-detail/incident-detail.page';
+import { ImprintPage } from '../imprint/imprint.page';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'incidents/:id',
         component: IncidentDetailPage
+      },
+      {
+        path: 'imprint',
+        component: ImprintPage
       }
     ]
   },
