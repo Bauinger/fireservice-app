@@ -1,6 +1,8 @@
+import { LoadBazInfo, LoadMainData } from './fire-actions';
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { PollingService } from './services/polling.service';
+import { Store } from '@ngxs/store';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -8,20 +10,21 @@ import { PollingService } from './services/polling.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private swUpdate: SwUpdate) {
-  }
+  constructor(
+    private swUpdate: SwUpdate,
+    private pollingService: PollingService,
+    private store: Store
+  ) { }
 
   ngOnInit() {
-
-      if (this.swUpdate.isEnabled) {
-
-          this.swUpdate.available.subscribe(() => {
-
-              if(confirm('Neue Version verfügbar. Neue Version herunterladen?')) {
-
-                  window.location.reload();
-              }
-          });
-      }
+    this.store.dispatch(new LoadMainData());
+    this.store.dispatch(new LoadBazInfo());
+    if (this.swUpdate.isEnabled) {
+        this.swUpdate.available.subscribe(() => {
+            if(confirm('Neue Version verfügbar. Neue Version herunterladen?')) {
+                window.location.reload();
+            }
+        });
+    }
   }
 }
