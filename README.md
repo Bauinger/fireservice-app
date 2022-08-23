@@ -1,12 +1,18 @@
 # Feuerwehreinsätze NÖ - FireService
 
+![Desktop Overview](images/overview_desktop.png "Overview page on desktop")
 The running web app can be found [here.](https://fireservice-app.herokuapp.com)
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" src="images/overview_mobile.png">  mobile overview page |  <img width="1604" src="images/district_list.png"> districts list page|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="images/incident.png"> incident detail page|
+|<img width="1604" src="images/statistics.png">  statistics page |  <img width="1604" src="images/imprint.png"> imprint page||
+
+
 
 Web- &amp; mobile app for displaying information about ongoing firefighter operations and statistics of operations in lower austria. The [Grisu NÖ - Mobile App](https://github.com/Grisu-NOE/mobile-app) was used as model.
 
 ## Description
-This app was developed in the course of my bachelor thesis about reactive programming at the Johannes Kepler University (JKU). 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+This app was developed in the course of my bachelor thesis about reactive programming at the Johannes Kepler University (JKU). The thesis can be found [here.](thesis.pdf)
 
 ## Development server
 
